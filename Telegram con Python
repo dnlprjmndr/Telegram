@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+## CREA UN BOT DE TELEGRAM CON PYTHON Y ENVIA MENSAJE.
+# lanzamos cualquier comando linux y nos sube el resultado a myTelegram
+'''
+Python telegram
+
+'''
+import requests, subprocess
+
+def exec(command):
+    try:
+        salida = subprocess.Popen(command.split(), shell=True, stdout=subprocess.PIPE).communicate()[0].decode('utf-8')
+        return (salida)
+    except Exception as err: #subprocess.CalledProcessError as err:
+        print('ERROR exec():', err)
+        return(1)
+
+def send_to_telegram(message):
+
+    TOKEN = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxX"
+    ID = "NNNNNNNNN"
+    URL = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+    msg = exec(message)
+
+    try:
+        response = requests.post(URL, json={'chat_id': ID, 'text': msg})
+        #print(response.text)
+    except Exception as e:
+        print(e)
+
+send_to_telegram('df -h')
