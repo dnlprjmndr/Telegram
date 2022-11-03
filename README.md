@@ -1,3 +1,11 @@
+Telegram.py
+This software written in python sends you a message to the group 
+created with @BotFather. If the message is too long for telegram to send it, 
+it cuts it and sends it to you in pieces.
+03/11/02022
+version: 2
+by www.som-it.com
+
 Como crear bot in Telegram 
 
  - Desde tú móvil con la app de **Telegram**...
