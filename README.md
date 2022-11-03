@@ -2,7 +2,7 @@ Como crear bot in Telegram
 
  - Desde tú móvil con la app de **Telegram**...
  - Abrimos una conversación con **@Botfather** 
- - Pulsamos en **Start** para iniciar la conversación, nos sale un listado con los comandos, para poder utilizar.
+ - introducimos esto **/Start** para iniciar la conversación, nos sale un listado con los comandos, para poder utilizar.
    
      * **/newbot**  – Crea un nuevo bot. Te pedirá el nombre para su creación.
      * **/deletebot**  – Eliminar el bot.
