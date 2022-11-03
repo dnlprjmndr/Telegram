@@ -1,9 +1,17 @@
-# send-message-to-telegram.py
-# by www.ShellHacks.com
+# Telegram.py
+# by www.som-it.com
 
-import requests
+import requests, subprocess
 
 LONGUITUD_MENSAJES = 4096
+
+def exec(command):
+    try:
+        salida = subprocess.Popen(command.split(), shell=True, stdout=subprocess.PIPE).communicate()[0].decode('utf-8')
+        return (salida)
+    except Exception as err: #subprocess.CalledProcessError as err:
+        print('ERROR exec():', err)
+        return(1)
 
 def corta(mensaje):
     iLongMsg = LONGUITUD_MENSAJES
@@ -21,8 +29,8 @@ def send_to_telegram(message):
     TOKEN = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxX"
     ID = "NNNNNNNNN"
     apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
-    try:
     
+    try:
         if len(message) > LONGUITUD_MENSAJES:
             msg = corta(message)
    
