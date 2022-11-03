@@ -18,8 +18,8 @@ def corta(mensaje):
 
 def send_to_telegram(message):
 
-    apiToken = '5694548165:AAH6YmMnQJtZlC5Jb7vQpt59z95e'
-    chatID = '515382482'
+    TOKEN = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxX"
+    ID = "NNNNNNNNN"
     apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
     try:
     
