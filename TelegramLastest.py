@@ -31,8 +31,8 @@ def cut(mensaje):
 
 def send_to_telegram(message):
 
-    TOKEN="5694548165:AAH6YmMnQJtZlC5Jb7vQpt59z95egyab-Vs"
-    ID="111909950"
+    TOKEN="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    ID="NNNNNNNNN"
     apiURL = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
     msgsList = ""
     #msgsList = exec(message)
