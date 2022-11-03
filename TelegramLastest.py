@@ -43,4 +43,6 @@ def send_to_telegram(message):
     except Exception as e:
         print(e)
 
-send_to_telegram("asdfhalkdjfdkjfafdshfgdhafha1234567890asdfhalkdjfdkjfafdshfgdhafha")
+#send_to_telegram("asdfhalkdjfdkjfafdshfgdhafha1234567890asdfhalkdjfdkjfafdshfgdhafha")
+#send_to_telegram("df -h")
+send_to_telegram("sudo apt update && sudo apt upgrade -y")
