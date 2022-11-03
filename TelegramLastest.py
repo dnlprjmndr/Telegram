@@ -9,11 +9,11 @@ def exec(command):
     try:
         salida = subprocess.Popen(command.split(), shell=True, stdout=subprocess.PIPE).communicate()[0].decode('utf-8')
         return (salida)
-    except Exception as err: #subprocess.CalledProcessError as err:
+    except Exception as err: 
         print('ERROR exec():', err)
         return(1)
 
-def corta(mensaje):
+def cut(mensaje):
     iLongMsg = LONGUITUD_MENSAJES
     index = 0
     msgTel = []
@@ -32,7 +32,7 @@ def send_to_telegram(message):
     
     try:
         if len(message) > LONGUITUD_MENSAJES:
-            msg = corta(message)
+            msg = cut(message)
    
             for m in msg:
                 response = requests.post(apiURL, json={'chat_id': chatID, 'text': m})
