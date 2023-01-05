@@ -8,7 +8,7 @@
 
 import requests, subprocess
 
-LONGUITUD_MENSAJES = 4096
+const LONGUITUD_MENSAJES = 4096
 
 def exec(command):
     try:
@@ -18,14 +18,14 @@ def exec(command):
         print('ERROR exec():', err)
         return(1)
 
-def cut(mensaje):
+def cut(message):
     iLongMsg = LONGUITUD_MENSAJES
     index = 0
     msgTel = []
-    for i in range(round(len(mensaje) / LONGUITUD_MENSAJES)):
-        msgTel.append(mensaje[index:iLongMsg])
-        index = index+LONGUITUD_MENSAJES
-        iLongMsg += LONGUITUD_MENSAJES
+    for i in range(round(len(message) / iLongMsg)):
+        msgTel.append(message[index:iLongMsg])
+        index = index+iLongMsg
+        iLongMsg += iLongMsg
 
     return msgTel
 
