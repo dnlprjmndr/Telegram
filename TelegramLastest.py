@@ -3,12 +3,12 @@
 ## created with @BotFather. If the message is too long for telegram to send it, 
 ## it cuts it and sends it to you in pieces.
 ## 03/11/02022
-# version: 2
+# version: 2.0
 # by www.som-it.com
 
 import requests, subprocess
 
-const LONGUITUD_MENSAJES = 4096
+const MESSAGE_LENGTH = 4096
 
 def exec(command):
     try:
@@ -19,10 +19,10 @@ def exec(command):
         return(1)
 
 def cut(message):
-    iLongMsg = LONGUITUD_MENSAJES
+    iLongMsg = MESSAGE_LENGTH
     index = 0
     msgTel = []
-    for i in range(round(len(message) / iLongMsg)):
+    for i in range(len(message) // iLongMsg):
         msgTel.append(message[index:iLongMsg])
         index = index+iLongMsg
         iLongMsg += iLongMsg
@@ -39,12 +39,12 @@ def send_to_telegram(message):
     #if msgsList == 1:
 
     try:
-        if len(message) > LONGUITUD_MENSAJES:
+        if len(message) > MESSAGE_LENGTH:
            msgsList = cut(message)
 
-        for msg in msgsList:
-            response = requests.post(apiURL, json={'chat_id': ID, 'text': msg})
-            print(response.text)
+           for msg in msgsList:
+               response = requests.post(apiURL, json={'chat_id': ID, 'text': msg})
+               #print(response.text)
         else:
             response = requests.post(apiURL, json={'chat_id': ID, 'text': message})
             #print(response)
